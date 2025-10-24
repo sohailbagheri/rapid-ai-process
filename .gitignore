@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Build artifacts
+build/
+dist/
+coverage/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS/IDE
+.DS_Store
+*.swp
+*.swo
+*.log
+
+# Tooling
+.cursor/
+.turbo/
+
+# Runtime data
+.data/
+.caches/
+
