@@ -14,7 +14,6 @@ import {
   MonitorPlay,
   CheckCircle,
 } from "@phosphor-icons/react"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 async function fetchCounts(duration: string, ids?: string[]): Promise<Record<string, number>> {
   try {
@@ -934,7 +933,7 @@ const getPhaseIcon = (phaseId: string) => {
 }
 
 export function DesignProcessFlow() {
-  const [duration, setDuration] = useState("8")
+  const [duration, setDuration] = useState("2days")
   const [selectedPhase, setSelectedPhase] = useState<string | null>(null)
   const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set())
   const [usedDetails, setUsedDetails] = useState<Set<string>>(new Set())
@@ -1869,18 +1868,9 @@ export function DesignProcessFlow() {
     <div className="min-h-screen bg-black text-white p-6">
       <div className="mb-8 flex items-center gap-4">
         <h1 className="text-2xl font-bold">Rapid AI Design Process</h1>
-        <Select value={duration} onValueChange={setDuration}>
-          <SelectTrigger className="w-32 bg-zinc-900 border-zinc-800">
-            <SelectValue />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="2days">2 days</SelectItem>
-            <SelectItem value="1">1 week</SelectItem>
-            <SelectItem value="2">2 weeks</SelectItem>
-            <SelectItem value="4">4 weeks</SelectItem>
-            <SelectItem value="8">8 weeks</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="text-sm font-semibold bg-zinc-900 border border-zinc-800 rounded-md px-3 py-2">
+          2 days
+        </div>
         {duration === "2days" && (
           <div className="flex items-center gap-3 text-sm text-zinc-300">
             <div className="flex items-center gap-2">
